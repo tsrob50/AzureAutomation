@@ -8,14 +8,6 @@ function Write-Log {
     Param($message)
     Write-Output "$(get-date -format 'yyyyMMdd HH:mm:ss') $message" | Out-File -Encoding utf8 $logFile -Append
 }
-#Disable Auto Updates, updates stop Sysprep
-try {
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name NoAutoUpdate -Value 1
-}
-catch {
-    $ErrorMessage = $_.Exception.message
-    write-log "Error running Sysprep: $ErrorMessage"
-}
 #Run Sysprep
 try{
     write-output "Sysprep Starting"

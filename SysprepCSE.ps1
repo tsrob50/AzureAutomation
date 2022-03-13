@@ -31,7 +31,7 @@ function Write-Log {
 #Run Sysprep
 try{
     write-output "Sysprep Starting"
-    #Start-Process -filepath 'c:\Windows\system32\sysprep\sysprep.exe' -Wait -ErrorAction Stop -ArgumentList  '/shutdown', '/oobe', '/mode:vm', '/quiet'
+    Start-Process -filepath 'c:\Windows\system32\sysprep\sysprep.exe' -Wait -ErrorAction Stop -ArgumentList  '/shutdown', '/oobe', '/mode:vm', '/quiet'
     write-output "Sysprep Started"
 }
 catch {

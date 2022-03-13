@@ -36,7 +36,6 @@ function Write-Log {
 try{
     write-output "Sysprep Starting"
     Start-Process -filepath 'c:\Windows\system32\sysprep\sysprep.exe' -Wait -ErrorAction Stop -ArgumentList '/generalize', '/oobe', '/mode:vm', '/shutdown'
-    write-output "Sysprep Started"
 }
 catch {
     $ErrorMessage = $_.Exception.message

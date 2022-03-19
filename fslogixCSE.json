@@ -1,0 +1,21 @@
+{
+  "apiVersion": "2018-06-01",
+  "type": "Microsoft.Compute/virtualMachines/extensions",
+  "name": "virtualMachineName/config-fslogix",
+  "location": "[resourceGroup().location]",
+  "properties": {
+      "publisher": "Microsoft.Compute",
+      "type": "CustomScriptExtension",
+      "typeHandlerVersion": "1.10",
+      "autoUpgradeMinorVersion": true,
+      "settings": {
+          "timestamp":123456789
+      },
+      "protectedSettings": {
+        "fileUris": [
+          "https://raw.githubusercontent.com/tsrob50/AzureAutomation/main/fslogixConfig.ps1"
+      ],
+      "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File fslogixConfig.ps1"
+      }
+  }
+}

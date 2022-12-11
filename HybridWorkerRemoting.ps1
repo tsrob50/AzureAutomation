@@ -1,3 +1,4 @@
+# All code is as-is with no warranty, expressed or implied. Test it before you trust it!
 # Get Credentials
 $creds = Get-AutomationPSCredential -Name "<Shared_Credential_Name>"
 
